@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://bu6uq4iacu8oq"]
+[gd_scene load_steps=2 format=3 uid="uid://cwd81m1ar218j"]
+
+[ext_resource type="Script" uid="uid://dsrq568agnvjs" path="res://scripts/menu.gd" id="1_yqeox"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -7,3 +9,32 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_yqeox")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_left = 134.0
+offset_top = 45.0
+offset_right = 263.0
+offset_bottom = 68.0
+text = "Placeholder Title"
+
+[node name="Play" type="Button" parent="."]
+layout_mode = 0
+offset_left = 133.0
+offset_top = 92.0
+offset_right = 174.0
+offset_bottom = 123.0
+text = "Play
+"
+
+[node name="Settings" type="Button" parent="."]
+layout_mode = 0
+offset_left = 133.0
+offset_top = 144.0
+offset_right = 174.0
+offset_bottom = 175.0
+text = "Settings
+"
+
+[connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]

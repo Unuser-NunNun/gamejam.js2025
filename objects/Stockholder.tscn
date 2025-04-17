@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ukbptf8tb58c"]
+
+[ext_resource type="Script" uid="uid://xlp1c75tdpcw" path="res://scripts/stockholder.gd" id="1_iwwlg"]
+
+[node name="Stockholder" type="Node"]
+script = ExtResource("1_iwwlg")

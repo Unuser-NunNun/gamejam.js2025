@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3hv0ida31e1p"]
+
+[ext_resource type="Script" uid="uid://bwp3sxvil1kju" path="res://scripts/interest_groups.gd" id="1_yk4yc"]
+
+[node name="InterestGroups" type="Node"]
+script = ExtResource("1_yk4yc")

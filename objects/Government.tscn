@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6w5lcn1n6mde"]
+
+[ext_resource type="Script" uid="uid://ccn6v68facajm" path="res://scripts/government.gd" id="1_ohoex"]
+
+[node name="Government" type="Node"]
+script = ExtResource("1_ohoex")
+metadata/_custom_type_script = "uid://bwp3sxvil1kju"

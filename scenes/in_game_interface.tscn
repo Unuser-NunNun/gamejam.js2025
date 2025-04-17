@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqfn37nlxl6pp"]
+
+[ext_resource type="Script" uid="uid://cx5u8f4e2p8n3" path="res://scripts/in_game_interface.gd" id="1_214kj"]
+
+[node name="InGame Interface" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_214kj")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 71.0
+offset_top = 48.0
+offset_right = 148.0
+offset_bottom = 79.0
+text = "New Day"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
