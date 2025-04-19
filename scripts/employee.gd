@@ -5,6 +5,8 @@ var employeeJob: String
 var employeeWage: float
 var employeeCount: int 
 
+signal onTaskCompleted
+
 func _init(Job: String, Wage: float, Count: int) -> void:
 	employeeJob = Job
 	employeeWage = Wage

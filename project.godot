@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Gamejam.js 2025"
-run/main_scene="uid://cwd81m1ar218j"
+run/main_scene="uid://bqfn37nlxl6pp"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -22,6 +22,7 @@ PlayerStatsManager="*res://scripts/Global Scripts/PlayerStatsManager.gd"
 GameManager="*res://scripts/Global Scripts/GameManager.gd"
 EventManager="*res://scripts/Global Scripts/EventManager.gd"
 InterestGroupsManager="*res://scripts/Global Scripts/InterestGroupsManager.gd"
+ProductSellingManager="*res://scripts/Global Scripts/ProductSellingManager.gd"
 
 [rendering]
 

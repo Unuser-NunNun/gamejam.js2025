@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmv5h8ou6bhlt"]
+
+[ext_resource type="Script" uid="uid://b7asut2qh0ohx" path="res://scripts/shipper_employee.gd" id="1_5qp3r"]
+
+[node name="ShipperEmployee" type="Node"]
+script = ExtResource("1_5qp3r")

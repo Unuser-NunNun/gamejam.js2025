@@ -3,7 +3,7 @@ extends Node
 signal onNewDay(newDay: int)
 signal onThresholdPassed()
 signal onInit()
-signal onGameOver()
+signal onGameOver(type: String)
 
 var currentDay: int = 1
 
@@ -17,8 +17,11 @@ func newDay() -> void:
 		onThresholdPassed.emit()
 		markProfits()
 		return
-	onNewDay.emit(currentDay)
 	markProfits()
+	EmployeeManager.updateEmployees()
+	PlayerStatsManager.updateStats()
+	onNewDay.emit(currentDay)
+	
 
 func getCurrentDay() -> int:
 	return currentDay
@@ -33,8 +36,12 @@ func markProfits() -> void:
 	profitsByDay.append(PlayerStatsManager.getTotalProfit())
 	var margins: float = ((getProfitsByDay(currentDay)-getProfitsByDay(currentDay-1))/getProfitsByDay(currentDay-1))*100
 	marginsByDay.append(margins)
-	
+
+func gameOver(type: String) -> void:
+	pass
+
 func _ready() -> void:
 	profitsByDay.append(PlayerStatsManager.getTotalProfit())
 	marginsByDay.append(0.00)
+	onGameOver.connect(gameOver)
 	onInit.emit()

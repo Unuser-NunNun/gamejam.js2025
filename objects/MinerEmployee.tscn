@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ncvdeoq788gk"]
+
+[ext_resource type="Script" uid="uid://v3hi52sftfsw" path="res://scripts/miner_employee.gd" id="1_nxmlt"]
+
+[node name="MinerEmployee" type="Node"]
+script = ExtResource("1_nxmlt")

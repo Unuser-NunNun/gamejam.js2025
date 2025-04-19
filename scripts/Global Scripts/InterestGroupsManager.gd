@@ -15,11 +15,16 @@ signal onInit()
 
 func _ready() -> void:
 	employees = EmployeesInterestGroup.new(employeesStartingRep)
-	stockholders = StockholderInterestGroup.new(stockholdersStartingRep,5, 2) #Days between each check = 5. Warnings before game over = 2
+	stockholders = StockholderInterestGroup.new(stockholdersStartingRep) 
 	consumers = ConsumerInterestGroup.new(consumersStartingRep)
 	government = GovernmentInterestGroup.new(governmentStartingRep)
 	onInit.emit()
 
+func updateInterestGroups() -> void:
+	stockholders.update()
+	employees.update()
+	consumers.update()
+	government.update()
 
 func getEmployeeInterestGroup() -> InterestGroups:
 	return employees

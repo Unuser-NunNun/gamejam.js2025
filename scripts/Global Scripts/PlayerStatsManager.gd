@@ -9,10 +9,9 @@ var BuildingMaintenanceCost: float = 10
 
 var totalProfits: float = 1000.00
 
-var dailyRevenue: float = 150.00
+var dailyRevenue: float
 
 signal onInit()
-
 
 func getTotalMaintenanceCost() -> float:
 	return BuildingMaintenanceCost+(EmployeeManager.getTotalNecessitiesCost())
@@ -35,10 +34,21 @@ func addTotalProfit(amount: float) -> void:
 func addDailyRevenue(amount: float) -> void:
 	dailyRevenue += amount
 
-func endOfDayProfit(_currentDay: int) -> void:
+func getDailyProfit() -> float:
+	return dailyRevenue-getDailyCosts()
+	
+func endOfDayProfit() -> void:
 	addTotalProfit(dailyRevenue-getDailyCosts())
 
+func resetDailyRevenue() -> void:
+	dailyRevenue = 0
+	
+func updateStats() -> void:
+	endOfDayProfit()
+	resetDailyRevenue()
+	
+
+	
 func _ready() -> void:
 	getDailyCosts()
-	GameManager.onNewDay.connect(endOfDayProfit)
 	onInit.emit()
