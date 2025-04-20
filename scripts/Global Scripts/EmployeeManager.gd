@@ -55,13 +55,13 @@ func factoryCompletedTask() -> void:
 	shipperEmployee.startTask(collectedOre)
 
 func shipperCompletedTask() -> void:
-	pass
+	infrastructureEmployee.updateFailureRate()
 
 func _ready() -> void:
 	minerEmployee = MinerEmployee.new(2.5,10)
 	factoryEmployee = FactoryEmployee.new(3,5)
 	shipperEmployee = ShipperEmployee.new(3,2)
-	infrastructureEmployee = InfrastructureEmployee.new(5,3)
+	infrastructureEmployee = InfrastructureEmployee.new(8,5)
 	
 	minerEmployee.onTaskCompleted.connect(minerCompletedTask)
 	factoryEmployee.onTaskCompleted.connect(factoryCompletedTask)

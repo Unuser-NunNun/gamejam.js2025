@@ -38,6 +38,7 @@ func getDailyProfit() -> float:
 	return dailyRevenue-getDailyCosts()
 	
 func endOfDayProfit() -> void:
+	print("Daily Expenses: " + str(getDailyCosts()))
 	addTotalProfit(dailyRevenue-getDailyCosts())
 
 func resetDailyRevenue() -> void:

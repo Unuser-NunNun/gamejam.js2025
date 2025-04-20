@@ -23,6 +23,11 @@ GameManager="*res://scripts/Global Scripts/GameManager.gd"
 EventManager="*res://scripts/Global Scripts/EventManager.gd"
 InterestGroupsManager="*res://scripts/Global Scripts/InterestGroupsManager.gd"
 ProductSellingManager="*res://scripts/Global Scripts/ProductSellingManager.gd"
+MaintenanceManager="*res://scripts/Global Scripts/MaintenanceManager.gd"
+
+[gui]
+
+theme/default_font_multichannel_signed_distance_field=true
 
 [rendering]
 

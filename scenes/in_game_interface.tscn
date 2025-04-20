@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bqfn37nlxl6pp"]
+[gd_scene load_steps=3 format=3 uid="uid://bqfn37nlxl6pp"]
 
 [ext_resource type="Script" uid="uid://cx5u8f4e2p8n3" path="res://scripts/in_game_interface.gd" id="1_214kj"]
+[ext_resource type="PackedScene" uid="uid://dbxjih22v0pjv" path="res://objects/event_viewer.tscn" id="2_fvtvy"]
 
 [node name="InGame Interface" type="Control"]
 layout_mode = 3
@@ -18,5 +19,12 @@ offset_top = 48.0
 offset_right = 148.0
 offset_bottom = 79.0
 text = "New Day"
+
+[node name="Event Viewer" parent="." instance=ExtResource("2_fvtvy")]
+layout_mode = 1
+offset_left = 180.0
+offset_top = -30.0
+offset_right = 180.0
+offset_bottom = -30.0
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

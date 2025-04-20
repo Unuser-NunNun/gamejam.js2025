@@ -6,10 +6,11 @@ signal onInit()
 signal onGameOver(type: String)
 
 var currentDay: int = 1
-
 var profitsByDay: Array[float]
 var marginsByDay: Array[float]
 var maxDay: int = 30
+
+var inflation: float = 0.05
 
 func newDay() -> void:
 	currentDay += 1
@@ -20,8 +21,23 @@ func newDay() -> void:
 	markProfits()
 	EmployeeManager.updateEmployees()
 	PlayerStatsManager.updateStats()
-	onNewDay.emit(currentDay)
 	
+	const TestEventA = preload("res://events/testEventA.gd")
+	const TestEventB = preload("res://events/testEventB.gd")
+	EventManager.addEvent(TestEventA.new())
+	EventManager.addEvent(TestEventB.new())
+	EventManager.updateEvents()
+	onNewDay.emit(currentDay)
+
+func getInflation() -> float:
+	return inflation
+
+func setInflation(amount: float) -> float:
+	inflation += amount
+	return amount
+
+func getAdjustedInflation(wage: float) -> float:
+	return wage * (1+(inflation*(currentDay-1)))
 
 func getCurrentDay() -> int:
 	return currentDay
